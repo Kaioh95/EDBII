@@ -156,9 +156,9 @@ public class Node {
     }
 
     public Integer removeMin(Node n){
-        if(n.getLeft_child() == null){
-            Integer x = n.getValue();
-            n = n.getRight_child();
+        if(n.left_child.left_child == null){
+            Integer x = n.getLeft_child().getValue();
+            n.left_child = n.left_child.right_child;
             return x;
         }
         else
