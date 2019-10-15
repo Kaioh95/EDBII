@@ -10,20 +10,20 @@ public class Main {
         treeContent.add(350); treeContent.add(117); treeContent.add(80);
         treeContent.add(42); treeContent.add(65);
 
-        Node tree = new Node(treeContent.get(0));
+        BST tree = new BST(treeContent.get(0));
 
         for(int i = 1; i < 14; i++){
-            tree.insert(treeContent.get(i), tree);
+            tree.insert(treeContent.get(i), tree.getRoot());
         }
 
-        tree.preOrder();
+        tree.preOrder(tree.getRoot());
         System.out.println("\n*********************************************");
-        tree.search(tree, 80);
+        tree.search(tree.getRoot(), 80);
 
-        Node maior = tree.maxKey(tree);
-        Node menor = tree.minKey(tree);
+        Node maior = tree.maxKey(tree.getRoot());
+        Node menor = tree.minKey(tree.getRoot());
         System.out.println("Max Value: " + maior.getValue() + "\nMin Value: " + menor.getValue());
-        System.out.println("** Removed Node: " + tree.removeMin(tree) + "**");
-        tree.preOrder();
+        tree.remove(200);
+        tree.preOrder(tree.getRoot());
     }
 }
