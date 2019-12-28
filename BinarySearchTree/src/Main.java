@@ -23,6 +23,7 @@ public class Main {
         Node maior = tree.maxKey(tree.getRoot());
         Node menor = tree.minKey(tree.getRoot());
         System.out.println("Max Value: " + maior.getValue() + "\nMin Value: " + menor.getValue());
+        //System.out.println("Successor: " + tree.getSuccessor( tree.getRoot() ).getValue() );
         tree.remove(200);
         tree.preOrder(tree.getRoot());
     }

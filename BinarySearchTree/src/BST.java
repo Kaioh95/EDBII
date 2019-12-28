@@ -186,9 +186,10 @@ public class BST {
             }else{
                 parent.right_child = current.right_child;
             }
-        }else if(current.left_child != null && current.right_child != null){
+        }
+        else if(current.left_child != null && current.right_child != null){
 
-            //now we have found the minimum element in the right sub tree
+            //now we have to found the minimum element in the right sub tree
             Node successor	= getSuccessor(current);
             if(current == root){
                 root = successor;
@@ -202,6 +203,12 @@ public class BST {
         return true;
     }
 
+    /**
+     * Method that found the minimum element in the right sub tree
+     * and remove the found element.
+     * @param deleleNode
+     * @return successor
+     */
     public Node getSuccessor(Node deleleNode){
         Node successsor = null;
         Node successsorParent = null;
